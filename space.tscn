@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://bxwduk3wn4sg8"]
+
+[ext_resource type="Script" path="res://cod/movement.gd" id="1_0ots8"]
+[ext_resource type="Texture2D" uid="uid://b7xoxq7n0chy0" path="res://ert/ship.png" id="3_mwgo4"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4jd4i"]
+load_path = "res://.godot/imported/galaxy-space-universe-andromeda-stars-og-1861100011.jpg-ae0bd64739a27216f16647c5055c170f.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_awj1m"]
+size = Vector2(25, 28)
+
+[node name="movement test" type="Node2D"]
+
+[node name="Galaxy-space-universe-andromeda-stars-og-1861100011" type="Sprite2D" parent="."]
+position = Vector2(2, 4)
+texture = SubResource("CompressedTexture2D_4jd4i")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(50, 50)
+script = ExtResource("1_0ots8")
+rotation_speed = 3.0
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+rotation = 1.5708
+texture = ExtResource("3_mwgo4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-1.5, 0)
+shape = SubResource("RectangleShape2D_awj1m")
