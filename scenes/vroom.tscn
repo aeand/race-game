@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8n4hu8f828h0"]
+
+[ext_resource type="Texture2D" uid="uid://bm8unqk4vkvr6" path="res://assests/track.jpg" id="1_wsjcf"]
+[ext_resource type="Script" path="res://code/movement.gd" id="2_3awjw"]
+[ext_resource type="Texture2D" uid="uid://dvfa4r1vohyy8" path="res://assests/car.png" id="3_tlbmk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ny3o8"]
+size = Vector2(25, 28)
+
+[node name="root" type="Node2D"]
+
+[node name="track" type="Sprite2D" parent="."]
+position = Vector2(71, 61)
+texture = ExtResource("1_wsjcf")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(50, 50)
+script = ExtResource("2_3awjw")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+rotation = 1.5708
+texture = ExtResource("3_tlbmk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-1.5, 0)
+shape = SubResource("RectangleShape2D_ny3o8")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
